@@ -1,5 +1,8 @@
 package com.ethem00.betalatethannever;
 
+import com.ethem00.betalatethannever.block.ModBlocks;
+import com.ethem00.betalatethannever.entity.ModEntities;
+import com.ethem00.betalatethannever.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +14,10 @@ public class BetaLateThanNever implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
+        ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
+        ModEntities.registerModEntities();
 
 		LOGGER.info("[Beta Late Than Never] Initializing");
 	}
