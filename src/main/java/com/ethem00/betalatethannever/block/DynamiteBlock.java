@@ -83,7 +83,7 @@ public class DynamiteBlock extends TntBlock {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (!itemStack.isOf(Items.FLINT_AND_STEEL) && !itemStack.isOf(Items.FIRE_CHARGE)) {
-            return onUse(state, world, pos, player, hand, hit);
+            return super.onUse(state, world, pos, player, hand, hit);
         } else {
             primeDynamite(world, pos, player);
             world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL | Block.REDRAW_ON_MAIN_THREAD);

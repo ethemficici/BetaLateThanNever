@@ -1,6 +1,7 @@
 package com.ethem00.betalatethannever.item;
 
 import com.ethem00.betalatethannever.block.DynamiteBlock;
+import com.ethem00.betalatethannever.block.ModBlocks;
 import com.ethem00.betalatethannever.entity.DynamiteEntity;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,6 +12,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+
+
 
 public class ThrowableDynamiteItem extends BlockItem {
 
@@ -35,9 +38,10 @@ public class ThrowableDynamiteItem extends BlockItem {
 
         boolean hasFlintAndSteel = player.getOffHandStack().isOf(Items.FLINT_AND_STEEL);
 
-        // Don’t allow placing dynamite directly on another dynamite block
-        if (world.getBlockState(context.getBlockPos()).getBlock() instanceof DynamiteBlock) {
-            return ActionResult.FAIL; // cancels placement cleanly
+        // Cancel only if trying to replace an existing dynamite block directly
+        if (world.getBlockState(context.getBlockPos()).getBlock() instanceof DynamiteBlock
+                && world.getBlockState(context.getBlockPos()).isReplaceable()) {
+            return ActionResult.FAIL;
         }
 
         if (hasFlintAndSteel && !playerIsCrouched) {
