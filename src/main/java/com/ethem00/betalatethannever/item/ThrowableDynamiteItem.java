@@ -38,6 +38,8 @@ public class ThrowableDynamiteItem extends BlockItem {
 
         boolean hasFlintAndSteel = player.getOffHandStack().isOf(Items.FLINT_AND_STEEL);
 
+        boolean hasFireCharge = player.getOffHandStack().isOf(Items.FIRE_CHARGE);
+
         // Cancel only if trying to replace an existing dynamite block directly
         if (world.getBlockState(context.getBlockPos()).getBlock() instanceof DynamiteBlock
                 && world.getBlockState(context.getBlockPos()).isReplaceable()) {
@@ -49,19 +51,27 @@ public class ThrowableDynamiteItem extends BlockItem {
             return ActionResult.success(world.isClient);
         }
 
+        if (hasFireCharge && !playerIsCrouched) {
+            throwDynamite(world, player, stack, player.getOffHandStack());
+            return ActionResult.success(world.isClient);
+        }
+
         // Safe: let BlockItem handle normal placement (including offset logic)
         return super.useOnBlock(context);
     }
 
-    /**
-     * Right-click in air
-     */
+    // Right Click in air
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
         ItemStack offhand = player.getOffHandStack();
 
         if (offhand.isOf(Items.FLINT_AND_STEEL)) {
+            throwDynamite(world, player, stack, offhand);
+            return TypedActionResult.success(stack, world.isClient);
+        }
+
+        if (offhand.isOf(Items.FIRE_CHARGE)) {
             throwDynamite(world, player, stack, offhand);
             return TypedActionResult.success(stack, world.isClient);
         }
@@ -73,12 +83,18 @@ public class ThrowableDynamiteItem extends BlockItem {
     /**
      * Spawns a thrown DynamiteEntity and plays priming sound
      */
-    private void throwDynamite(World world, PlayerEntity player, ItemStack dynamiteStack, ItemStack flintAndSteel) {
+    private void throwDynamite(World world, PlayerEntity player, ItemStack dynamiteStack, ItemStack offhandStack) {
         if (!world.isClient) {
+
+            float heightModifier = 0;
+
+            if(player.isSneaking()) {heightModifier = 0.25f;}
+            else {heightModifier = 0.35f;}
+
             DynamiteEntity dynamite = new DynamiteEntity(
                     world,
                     player.getX(),
-                    player.getY() + player.getStandingEyeHeight(),
+                    player.getY() + player.getStandingEyeHeight() - heightModifier,
                     player.getZ(),
                     player
             );
@@ -90,11 +106,43 @@ public class ThrowableDynamiteItem extends BlockItem {
                     player.getX(), player.getY(), player.getZ(),
                     SoundEvents.ENTITY_TNT_PRIMED,
                     SoundCategory.PLAYERS,
-                    1.0f, 1.0f
+                    0.75f, 1.0f
             );
 
-            // Damage flint & steel
-            flintAndSteel.damage(1, player, p -> p.sendToolBreakStatus(player.getActiveHand()));
+            world.playSound(
+                    null,
+                    player.getX(), player.getY(), player.getZ(),
+                    SoundEvents.ENTITY_SNOWBALL_THROW,
+                    SoundCategory.PLAYERS,
+                    0.5f, 0.25f
+            );
+
+            if(offhandStack.isOf(Items.FLINT_AND_STEEL))
+            {
+                offhandStack.damage(1, player, p -> p.sendToolBreakStatus(player.getActiveHand()));
+
+                world.playSound(
+                        null,
+                        player.getX(), player.getY(), player.getZ(),
+                        SoundEvents.ITEM_FLINTANDSTEEL_USE,
+                        SoundCategory.PLAYERS,
+                        1.0f, 1.0f
+                );
+            }
+
+            if(offhandStack.isOf(Items.FIRE_CHARGE))
+            {
+                if (!player.getAbilities().creativeMode) { offhandStack.decrement(1); }
+
+                // Play Firecharge Sound
+                world.playSound(
+                        null,
+                        player.getX(), player.getY(), player.getZ(),
+                        SoundEvents.ITEM_FIRECHARGE_USE,
+                        SoundCategory.PLAYERS,
+                        1.0f, 1.0f
+                );
+            }
         }
 
         // Decrement dynamite item in hand if not creative

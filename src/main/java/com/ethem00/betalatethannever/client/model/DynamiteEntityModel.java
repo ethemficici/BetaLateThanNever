@@ -20,21 +20,21 @@ public class DynamiteEntityModel extends EntityModel<DynamiteEntity> {
         ModelPartData dynamite = root.addChild("dynamite",
                 ModelPartBuilder.create()
                         .uv(0, 0)
-                        .cuboid(-2.0F, -4.0F, -2.0F, 4.0F, 12.0F, 4.0F),
-                ModelTransform.pivot(0.0F, 16.0F, 0.0F));
+                        .cuboid(-2.0F, -12.0F, -2.0F, 4.0F, 12.0F, 4.0F),
+                ModelTransform.of(0.0F, 12.0F, 0.0F, 0.0F, 0.0F, 0.0F));
 
         // Fuse pieces
         dynamite.addChild("fuse1",
                 ModelPartBuilder.create()
-                        .uv(28, 0)
+                        .uv(28, -2)
                         .cuboid(0.0F, -12.0F, -1.0F, 0.0F, 4.0F, 2.0F),
-                ModelTransform.of(0.0F, 4.0F, 0.0F, 0.0F, 0.7854F, 0.0F));
+                ModelTransform.of(0.0F, 12.0F, 0.0F, 0.0F, 0.7854F, 0.0F));
 
         dynamite.addChild("fuse2",
                 ModelPartBuilder.create()
-                        .uv(28, 0)
+                        .uv(28, -2)
                         .cuboid(0.0F, -12.0F, -1.0F, 0.0F, 4.0F, 2.0F),
-                ModelTransform.of(0.0F, 4.0F, 0.0F, 0.0F, -0.7854F, 0.0F));
+                ModelTransform.of(0.0F, 12.0F, 0.0F, 0.0F, -0.7854F, 0.0F));
 
         return TexturedModelData.of(modelData, 32, 32);
     }
