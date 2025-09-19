@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "AB",
+    "BA"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:gravel"
+    },
+    "B": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:coarse_gravel",
+    "count": 2
+  }
+}

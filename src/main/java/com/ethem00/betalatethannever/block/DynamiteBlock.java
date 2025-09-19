@@ -2,6 +2,7 @@ package com.ethem00.betalatethannever.block;
 
 import com.ethem00.betalatethannever.entity.DynamiteEntity;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +14,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -25,7 +28,8 @@ import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.explosion.Explosion;
 import org.jetbrains.annotations.Nullable;
 
-public class DynamiteBlock extends TntBlock {
+public class DynamiteBlock extends FallingBlock {
+    public static final BooleanProperty UNSTABLE = Properties.UNSTABLE;
 
     public DynamiteBlock(AbstractBlock.Settings settings) {
         super(settings);
@@ -43,6 +47,7 @@ public class DynamiteBlock extends TntBlock {
 
     @Override
     public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
+        world.scheduleBlockTick(pos, this, this.getFallDelay());
         if (!oldState.isOf(state.getBlock())) {
             if (world.isReceivingRedstonePower(pos)) {
                 primeDynamite(world, pos);
@@ -59,10 +64,23 @@ public class DynamiteBlock extends TntBlock {
         }
     }
 
+    //Check if NostalicTweaks has Prime TNT enabled in config, somehow.
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (!world.isClient() && !player.isCreative() && (Boolean)state.get(UNSTABLE)) {
+        if (!world.isClient() && !player.isCreative() && !player.isSneaking()) {
             primeDynamite(world, pos);
+        }
+    }
+
+    //Check if NostalicTweaks has Prime TNT enabled in config, somehow.
+    @Override
+    public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
+        player.incrementStat(Stats.MINED.getOrCreateStat(this));
+        player.addExhaustion(0.005F);
+
+        if(!world.isClient() && !player.isCreative() && player.isSneaking())
+        {
+            dropStacks(state, world, pos, blockEntity, player, tool);
         }
     }
 

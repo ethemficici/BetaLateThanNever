@@ -2,8 +2,12 @@ package com.ethem00.betalatethannever.item;
 
 import com.ethem00.betalatethannever.block.DynamiteBlock;
 import com.ethem00.betalatethannever.block.ModBlocks;
+import com.ethem00.betalatethannever.entity.CustomFallingBlockEntity;
 import com.ethem00.betalatethannever.entity.DynamiteEntity;
+import com.ethem00.betalatethannever.entity.UnlitDynamiteEntity;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
@@ -47,12 +51,12 @@ public class ThrowableDynamiteItem extends BlockItem {
         }
 
         if (hasFlintAndSteel && !playerIsCrouched) {
-            throwDynamite(world, player, stack, player.getOffHandStack());
+            throwDynamite(world, player, stack, player.getOffHandStack(), 1);
             return ActionResult.success(world.isClient);
         }
 
         if (hasFireCharge && !playerIsCrouched) {
-            throwDynamite(world, player, stack, player.getOffHandStack());
+            throwDynamite(world, player, stack, player.getOffHandStack(), 2);
             return ActionResult.success(world.isClient);
         }
 
@@ -67,23 +71,24 @@ public class ThrowableDynamiteItem extends BlockItem {
         ItemStack offhand = player.getOffHandStack();
 
         if (offhand.isOf(Items.FLINT_AND_STEEL)) {
-            throwDynamite(world, player, stack, offhand);
+            throwDynamite(world, player, stack, offhand, 1);
             return TypedActionResult.success(stack, world.isClient);
         }
 
         if (offhand.isOf(Items.FIRE_CHARGE)) {
-            throwDynamite(world, player, stack, offhand);
+            throwDynamite(world, player, stack, offhand, 2);
             return TypedActionResult.success(stack, world.isClient);
         }
 
-        return TypedActionResult.pass(stack);
+        throwDynamite(world, player, stack, offhand, 0);
+        return TypedActionResult.success(stack, world.isClient);
     }
 
 
     /**
      * Spawns a thrown DynamiteEntity and plays priming sound
      */
-    private void throwDynamite(World world, PlayerEntity player, ItemStack dynamiteStack, ItemStack offhandStack) {
+    private void throwDynamite(World world, PlayerEntity player, ItemStack dynamiteStack, ItemStack offhandStack, int throwType) {
         if (!world.isClient) {
 
             float heightModifier = 0;
@@ -91,23 +96,46 @@ public class ThrowableDynamiteItem extends BlockItem {
             if(player.isSneaking()) {heightModifier = 0.25f;}
             else {heightModifier = 0.35f;}
 
-            DynamiteEntity dynamite = new DynamiteEntity(
-                    world,
-                    player.getX(),
-                    player.getY() + player.getStandingEyeHeight() - heightModifier,
-                    player.getZ(),
-                    player
-            );
-            dynamite.setVelocity(player.getRotationVector().multiply(1.0)); // adjust throw speed
-            world.spawnEntity(dynamite);
 
-            world.playSound(
-                    null,
-                    player.getX(), player.getY(), player.getZ(),
-                    SoundEvents.ENTITY_TNT_PRIMED,
-                    SoundCategory.PLAYERS,
-                    0.75f, 1.0f
-            );
+            if(throwType > 0)
+            {
+                DynamiteEntity dynamite = new DynamiteEntity(
+                        world,
+                        player.getX(),
+                        player.getY() + player.getStandingEyeHeight() - heightModifier,
+                        player.getZ(),
+                        player
+                );
+                dynamite.setVelocity(player.getRotationVector().multiply(1.0)); // adjust throw speed
+                world.spawnEntity(dynamite);
+
+                // Primed Sound
+                world.playSound(
+                        null,
+                        player.getX(), player.getY(), player.getZ(),
+                        SoundEvents.ENTITY_TNT_PRIMED,
+                        SoundCategory.PLAYERS,
+                        0.75f, 1.0f
+                );
+            }
+            else
+            {
+                UnlitDynamiteEntity unlitDynamite = new UnlitDynamiteEntity(
+                        world,
+                        player.getX(),
+                        player.getY() + player.getStandingEyeHeight() - heightModifier,
+                        player.getZ(),
+                        player
+                );
+                //FallingBlockEntity unlitDynamite = new CustomFallingBlockEntity(EntityType.FALLING_BLOCK, world, Block.getBlockFromItem(Items.MOSSY_COBBLESTONE));
+                unlitDynamite.setPosition(
+                        player.getX(),
+                        player.getY()+ player.getStandingEyeHeight() - heightModifier,
+                        player.getZ());
+
+                unlitDynamite.setVelocity(player.getRotationVector().multiply(1.0)); // adjust throw speed
+                world.spawnEntity(unlitDynamite);
+            }
 
             world.playSound(
                     null,
@@ -117,7 +145,7 @@ public class ThrowableDynamiteItem extends BlockItem {
                     0.5f, 0.25f
             );
 
-            if(offhandStack.isOf(Items.FLINT_AND_STEEL))
+            if(throwType == 1)
             {
                 offhandStack.damage(1, player, p -> p.sendToolBreakStatus(player.getActiveHand()));
 
@@ -130,7 +158,7 @@ public class ThrowableDynamiteItem extends BlockItem {
                 );
             }
 
-            if(offhandStack.isOf(Items.FIRE_CHARGE))
+            if(throwType == 2)
             {
                 if (!player.getAbilities().creativeMode) { offhandStack.decrement(1); }
 

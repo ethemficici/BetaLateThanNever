@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "A",
+    "B",
+    "B"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:string"
+    },
+    "B": {
+      "item": "betalatethannever:blackpowder"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:dynamite",
+    "count": 1
+  }
+}

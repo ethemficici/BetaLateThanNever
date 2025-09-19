@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 public class ModItems {
 
     public static final Item CHERT = registerItemMethod("chert", new Item(new Item.Settings()));
+    public static final Item COCONUT_CHUNK = registerItemMethod("coconut_chunk", new Item(new Item.Settings().food(ModFoodComponents.COCONUT_CHUNK)));
 
     private static Item registerItemMethod(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(BetaLateThanNever.MOD_ID, name), item);
@@ -21,6 +22,10 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(CHERT);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
+            entries.add(COCONUT_CHUNK);
         });
 
     }

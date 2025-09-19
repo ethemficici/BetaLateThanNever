@@ -3,6 +3,7 @@ package com.ethem00.betalatethannever;
 import com.ethem00.betalatethannever.block.ModBlocks;
 import com.ethem00.betalatethannever.client.model.DynamiteEntityModel;
 import com.ethem00.betalatethannever.client.render.entity.DynamiteEntityRenderer;
+import com.ethem00.betalatethannever.client.render.entity.UnlitDynamiteEntityRenderer;
 import com.ethem00.betalatethannever.entity.DynamiteEntity;
 import com.ethem00.betalatethannever.entity.ModEntities;
 import net.fabricmc.api.ClientModInitializer;
@@ -23,6 +24,8 @@ public class BetaLateThanNeverClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.DYNAMITE_BLOCK, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(ModEntities.DYNAMITE, DynamiteEntityRenderer::new);
+
+        //EntityRendererRegistry.register(ModEntities.UNLIT_DYNAMITE, UnlitDynamiteEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(MODEL_DYNAMITE_LAYER, DynamiteEntityModel::getTexturedModelData);
     }

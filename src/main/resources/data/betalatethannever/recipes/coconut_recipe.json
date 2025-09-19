@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "AA",
+    "AA"
+  ],
+  "key": {
+    "A": {
+      "item": "betalatethannever:coconut_chunk"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:coconut",
+    "count": 1
+  }
+}

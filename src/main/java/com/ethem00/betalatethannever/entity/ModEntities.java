@@ -21,6 +21,16 @@ public class ModEntities {
                     .trackedUpdateRate(10)
                     .build()
     );
+    public static final EntityType<? extends UnlitDynamiteEntity> UNLIT_DYNAMITE = Registry.register(
+            Registries.ENTITY_TYPE,
+            Identifier.of(BetaLateThanNever.MOD_ID, "unlit_dynamite"),
+            FabricEntityTypeBuilder.<UnlitDynamiteEntity>create(SpawnGroup.MISC, UnlitDynamiteEntity::new)
+                    .dimensions(EntityDimensions.fixed(4/16f, 12f/16f))
+                    .fireImmune()
+                    .trackRangeBlocks(10)
+                    .trackedUpdateRate(10)
+                    .build()
+    );
     public static void registerModEntities() {
         // no attributes for Dynamite
     }
