@@ -62,6 +62,12 @@ public class UnlitDynamiteEntity extends Entity implements Ownable {
         if (this.isOnGround()) {
             this.setVelocity(this.getVelocity().multiply(0.7, -0.5, 0.7));
         }
+
+        //Check current position compared to previous tick's position
+        //If they are the same, attempt to place dynamite block.
+        //If placement fails due to a block already being occupied, then
+        //check if block is replaceable, if not, drop dynamite item
+
     }
 
     @Override

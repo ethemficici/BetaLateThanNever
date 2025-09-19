@@ -10,14 +10,14 @@ public class UnlitDynamiteEntityModel extends EntityModel<UnlitDynamiteEntity> {
     private final ModelPart dynamite;
 
     public UnlitDynamiteEntityModel(ModelPart root) {
-        this.dynamite = root.getChild("unlit_dynamite");
+        this.dynamite = root.getChild("dynamite");
     }
 
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData root = modelData.getRoot();
 
-        ModelPartData dynamite = root.addChild("unlit_dynamite",
+        ModelPartData dynamite = root.addChild("dynamite",
                 ModelPartBuilder.create()
                         .uv(0, 0)
                         .cuboid(-2.0F, -12.0F, -2.0F, 4.0F, 12.0F, 4.0F),

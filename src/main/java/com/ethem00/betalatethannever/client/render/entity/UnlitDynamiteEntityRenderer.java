@@ -1,7 +1,6 @@
 package com.ethem00.betalatethannever.client.render.entity;
 
 import com.ethem00.betalatethannever.BetaLateThanNeverClient;
-import com.ethem00.betalatethannever.client.model.DynamiteEntityModel;
 import com.ethem00.betalatethannever.client.model.UnlitDynamiteEntityModel;
 import com.ethem00.betalatethannever.entity.UnlitDynamiteEntity;
 import net.fabricmc.api.EnvType;
@@ -22,7 +21,7 @@ public class UnlitDynamiteEntityRenderer extends EntityRenderer<UnlitDynamiteEnt
 
     public UnlitDynamiteEntityRenderer(EntityRendererFactory.Context context) {
         super(context);
-        this.model = new UnlitDynamiteEntityModel(context.getPart(BetaLateThanNeverClient.MODEL_DYNAMITE_LAYER));
+        this.model = new UnlitDynamiteEntityModel(context.getPart(BetaLateThanNeverClient.MODEL_UNLIT_DYNAMITE_LAYER));
         this.shadowRadius = 0.125F;
         this.blockRenderManager = context.getBlockRenderManager();
     }

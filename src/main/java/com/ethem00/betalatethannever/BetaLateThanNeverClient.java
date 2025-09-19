@@ -17,6 +17,7 @@ import net.minecraft.util.Identifier;
 public class BetaLateThanNeverClient implements ClientModInitializer {
 
     public static final EntityModelLayer MODEL_DYNAMITE_LAYER = new EntityModelLayer(Identifier.of("betalatethannever", "cube"), "main");
+    public static final EntityModelLayer MODEL_UNLIT_DYNAMITE_LAYER = new EntityModelLayer(Identifier.of("betalatethannever", "cube"), "main");
 
     @Override
     public void onInitializeClient() {
@@ -25,7 +26,7 @@ public class BetaLateThanNeverClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.DYNAMITE, DynamiteEntityRenderer::new);
 
-        //EntityRendererRegistry.register(ModEntities.UNLIT_DYNAMITE, UnlitDynamiteEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.UNLIT_DYNAMITE, UnlitDynamiteEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(MODEL_DYNAMITE_LAYER, DynamiteEntityModel::getTexturedModelData);
     }
