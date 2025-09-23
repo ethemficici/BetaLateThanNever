@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "betalatethannever:block/palm_leaves",
+    "particle": "betalatethannever:block/palm_leaves"
+  }
+}

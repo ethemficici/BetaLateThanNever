@@ -4,5 +4,16 @@
   "item.betalatethannever.chert": "Chert",
   "block.betalatethannever.coarse_gravel": "Coarse Gravel",
   "block.betalatethannever.coconut": "Coconut",
-  "item.betalatethannever.coconut_chunk": "Coconut Chunk"
+  "block.betalatethannever.carved_coconut": "Carved Coconut",
+  "block.betalatethannever.palm_log": "Palm Log",
+  "block.betalatethannever.stripped_palm_log": "Stripped Palm Log",
+  "block.betalatethannever.palm_wood": "Palm Wood",
+  "block.betalatethannever.stripped_palm_wood": "Stripped Palm Wood",
+  "block.betalatethannever.palm_planks": "Palm Planks",
+  "block.betalatethannever.palm_leaves": "Palm Leaves",
+  "item.betalatethannever.coconut_chunk": "Coconut Chunk",
+  "block.betalatethannever.lazuli_cobblestone": "Lazuli Cobblestone",
+  "block.betalatethannever.polished_lapis_block": "Polished Block of Lapis Lazuli",
+  "block.betalatethannever.blue_bricks": "Blue Bricks",
+  "block.betalatethannever.brown_bricks": "Brown Bricks"
 }

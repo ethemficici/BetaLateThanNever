@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "betalatethannever:block/stripped_palm_log_top",
+    "side": "betalatethannever:block/stripped_palm_log"
+  }
+}
