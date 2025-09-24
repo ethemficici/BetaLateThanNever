@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "betalatethannever:block/coco_lantern",
+      "x": 180,
+      "y": 180
+    },
+    "facing=east": {
+      "model": "betalatethannever:block/coco_lantern",
+      "x": -90,
+      "y": -90
+    },
+    "facing=north": {
+      "model": "betalatethannever:block/coco_lantern",
+      "x": -90,
+      "y": -180
+    },
+    "facing=south": {
+      "model": "betalatethannever:block/coco_lantern",
+      "x": -90
+    },
+    "facing=up": {
+      "model": "betalatethannever:block/coco_lantern",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "betalatethannever:block/coco_lantern",
+      "x": -90,
+      "y": -270
+    }
+  }
+}

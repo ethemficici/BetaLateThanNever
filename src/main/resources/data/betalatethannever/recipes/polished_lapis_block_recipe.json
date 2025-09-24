@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "AA",
+    "AA"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:lapis_block"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:polished_lapis_block",
+    "count": 4
+  }
+}

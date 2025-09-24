@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "betalatethannever:block/happy_pumpkin",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "betalatethannever:block/happy_pumpkin"
+    },
+    "facing=south": {
+      "model": "betalatethannever:block/happy_pumpkin",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "betalatethannever:block/happy_pumpkin",
+      "y": 270
+    }
+  }
+}

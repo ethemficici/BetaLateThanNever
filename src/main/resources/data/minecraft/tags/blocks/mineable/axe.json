@@ -1,6 +1,14 @@
 {
   "replace": false,
   "values": [
-    "betalatethannever:coconut"
+    "betalatethannever:coconut",
+    "betalatethannever:carved_coconut",
+    "betalatethannever:palm_log",
+    "betalatethannever:palm_wood",
+    "betalatethannever:stripped_palm_log",
+    "betalatethannever:stripped_palm_wood",
+    "betalatethannever:palm_planks",
+    "betalatethannever:happy_pumpkin",
+    "betalatethannever:happy_jack_o_lantern"
   ]
 }

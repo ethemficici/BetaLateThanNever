@@ -4,6 +4,6 @@
     "particle": "betalatethannever:block/coconut_sides",
     "bottom": "betalatethannever:block/coconut_sides",
     "side": "betalatethannever:block/coconut_sides",
-    "top": "betalatethannever:block/coconut_face"
+    "top": "betalatethannever:block/coconut_face_on"
   }
 }

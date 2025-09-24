@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures" : {
+    "layer0": "betalatethannever:item/charged_soul_fire"
+  }
+}

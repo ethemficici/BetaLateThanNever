@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:soul_soil",
+      "item": "betalatethannever:blackpowder",
+      "item": "minecraft:lapis_lazuli"
+    }
+  ],
+  "result": {
+    "item": "betalatethannever:soul_charge",
+    "count": 1
+  }
+}

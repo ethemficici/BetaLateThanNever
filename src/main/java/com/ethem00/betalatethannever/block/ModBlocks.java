@@ -9,6 +9,7 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -33,23 +34,31 @@ public class ModBlocks {
     //Block Entities
     public static final Block MENDER_CHEST = registerBlockMethod("mender_chest",
             new Block(AbstractBlock.Settings.copy(Blocks.ENDER_CHEST)));
+    public static final Block CHARGED_SOUL_FIRE = registerBlockMethod("charged_soul_fire",
+            new CustomSoulFireBlock(AbstractBlock.Settings.copy(Blocks.SOUL_FIRE)));
 
     //Decoration Blocks
+    public static final Block HAPPY_PUMPKIN = registerBlockMethod("happy_pumpkin",
+            new WearableCarvedPumpkinBlock(AbstractBlock.Settings.copy(Blocks.CARVED_PUMPKIN))); //TODO: Some things make me smile. (ACHIEVEMENT FOR USING STRIPPER ON PUMPKIN)
+    public static final Block HAPPY_JACK_O_LANTERN = registerBlockMethod("happy_jack_o_lantern",
+            new CarvedPumpkinBlock(AbstractBlock.Settings.copy(Blocks.JACK_O_LANTERN)));
     public static final Block POLISHED_LAPIS_BLOCK = registerBlockMethod("polished_lapis_block",
             new Block(AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK)));
     public static final Block LAZULI_COBBLESTONE = registerBlockMethod("lazuli_cobblestone",
             new Block(AbstractBlock.Settings.copy(Blocks.MOSSY_COBBLESTONE)));
     public static final Block BROWN_BRICKS = registerBlockMethod("brown_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.BROWN))); //GIVE THIS AN ACHIEVEMENT WHEN YOU CRAFT IT YOU MORON!
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.BROWN))); //TODO: GIVE THIS AN ACHIEVEMENT WHEN YOU CRAFT IT YOU MORON!
     public static final Block BLUE_BRICKS = registerBlockMethod("blue_bricks",
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.LAPIS_BLUE)));
 
     // Coconut and Palm Tree Variants
-    public static final Block COCONUT = registerBlockMethod("coconut",
-            new CoconutBlock(CoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.0F).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
+    public static final Block COCONUT = registerBlockMethod("coconut", //TODO: CARVED CONVERSION
+            new CoconutBlock(CoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.5F).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
     public static final Block CARVED_COCONUT = registerBlockMethod("carved_coconut",
-            new CoconutBlock(CoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.0F).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
-
+            new CarvedCoconutBlock(CarvedCoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.5F).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
+    public static final Block COCO_LANTERN = registerBlockMethod("coco_lantern",
+            new CarvedCoconutBlock(CarvedCoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.5F).sounds(BlockSoundGroup.WOOD).luminance(state -> 15).allowsSpawning(Blocks::always).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
+    //
     public static final Block PALM_LEAVES = registerBlockMethod("palm_leaves",
             Blocks.createLeavesBlock(BlockSoundGroup.GRASS)); // TRANSPARENT BLOCKS NEED CUTOUT RENDER LAYER WHEN CLIENT IS INITIALIZED
     public static final Block PALM_LOG = registerBlockMethod("palm_log",
@@ -95,31 +104,58 @@ public class ModBlocks {
         BetaLateThanNever.LOGGER.info("Registering modded blocks from " + BetaLateThanNever.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(POLISHED_LAPIS_BLOCK);
-            entries.add(LAZULI_COBBLESTONE);
-            entries.add(BLUE_BRICKS);
-            entries.add(BROWN_BRICKS);
 
-            entries.add(PALM_LOG);
-            entries.add(PALM_WOOD);
-            entries.add(STRIPPED_PALM_LOG);
-            entries.add(STRIPPED_PALM_WOOD);
-            entries.add(PALM_PLANKS);
+            //TODO: create Lazuli Cobblestone stairs, slabs, walls, etc.
+            entries.addAfter(Items.LAPIS_BLOCK, POLISHED_LAPIS_BLOCK);
+            entries.addAfter(Items.LAPIS_BLOCK, LAZULI_COBBLESTONE);
+
+            //TODO: create Palm Wood stairs, slabs, etc.
+            entries.addAfter(Items.CHERRY_BUTTON, PALM_PLANKS);
+            entries.addAfter(Items.CHERRY_BUTTON, STRIPPED_PALM_WOOD);
+            entries.addAfter(Items.CHERRY_BUTTON, STRIPPED_PALM_LOG);
+            entries.addAfter(Items.CHERRY_BUTTON, PALM_WOOD);
+            entries.addAfter(Items.CHERRY_BUTTON, PALM_LOG);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COLORED_BLOCKS).register(entries -> {
+            //Colored Order:
+            //White, Light Gray, Gray, Black, Brown, Red, Orange, Yellow, Lime, Green, Cyan, Light Blue, Blue, Purple, Magenta, Pink
+
+            //TODO: Pink
+            //TODO: Magenta
+            //TODO: Purple
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, BLUE_BRICKS);
+            //TODO: Light Blue
+            //TODO: Cyan
+            //TODO: Green
+            //TODO: Lime
+            //TODO: Yellow
+            //TODO: Orange
+            //TODO: Red
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, BROWN_BRICKS);
+            //TODO: Black
+            //TODO: Gray
+            //TODO: Light Gray
+            //TODO: White
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
-            entries.add(COARSE_GRAVEL);
+            entries.addAfter(Items.GRAVEL, COARSE_GRAVEL);
 
-            entries.add(COCONUT);
-            entries.add(CARVED_COCONUT);
+            entries.addAfter(Items.JACK_O_LANTERN, COCO_LANTERN);
+            entries.addAfter(Items.JACK_O_LANTERN, CARVED_COCONUT);
+            entries.addAfter(Items.JACK_O_LANTERN, COCONUT);
 
-            entries.add(PALM_LEAVES);
-            entries.add(PALM_LOG);
+            entries.addAfter(Items.CARVED_PUMPKIN, HAPPY_PUMPKIN);
+            entries.addAfter(Items.JACK_O_LANTERN, HAPPY_JACK_O_LANTERN);
+
+            entries.addAfter(Items.CHERRY_LEAVES, PALM_LEAVES);
+            entries.addAfter(Items.CHERRY_LOG, PALM_LOG);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
-            entries.add(BLACKPOWDER_TRAIL);
-            entries.add(DYNAMITE_BLOCK);
+            entries.addAfter(Items.FLINT_AND_STEEL, BLACKPOWDER_TRAIL);
+            entries.addAfter(Items.ELYTRA, DYNAMITE_BLOCK);
         });
 
         //Register Flammable Blocks
@@ -127,6 +163,7 @@ public class ModBlocks {
 
         FlammableBlockRegistry.getDefaultInstance().add(COCONUT, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(CARVED_COCONUT, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(COCO_LANTERN, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(PALM_LOG, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_PALM_LOG, 5, 5);
         FlammableBlockRegistry.getDefaultInstance().add(PALM_WOOD, 5, 5);

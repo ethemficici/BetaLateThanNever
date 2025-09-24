@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "betalatethannever:block/happy_pumpkin_face",
+    "side": "betalatethannever:block/happy_pumpkin_sides",
+    "top": "betalatethannever:block/happy_pumpkin_top"
+  }
+}

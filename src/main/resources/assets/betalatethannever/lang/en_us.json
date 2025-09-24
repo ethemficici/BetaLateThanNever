@@ -1,19 +1,26 @@
 {
+  "item.betalatethannever.chert": "Chert",
+  "item.betalatethannever.coconut_chunk": "Coconut Chunk",
+  "item.betalatethannever.soul_charge": "Soul Charge",
+  "item.betalatethannever.stripper": "Stripper",
+
   "block.betalatethannever.blackpowder_trail": "Blackpowder",
   "block.betalatethannever.dynamite_block": "Dynamite",
-  "item.betalatethannever.chert": "Chert",
   "block.betalatethannever.coarse_gravel": "Coarse Gravel",
   "block.betalatethannever.coconut": "Coconut",
   "block.betalatethannever.carved_coconut": "Carved Coconut",
+  "block.betalatethannever.coco_lantern": "Coco' Lantern",
+  "block.betalatethannever.happy_pumpkin": "Happy Pumpkin",
+  "block.betalatethannever.happy_jack_o_lantern": "Happy Jack'o'Lantern",
   "block.betalatethannever.palm_log": "Palm Log",
   "block.betalatethannever.stripped_palm_log": "Stripped Palm Log",
   "block.betalatethannever.palm_wood": "Palm Wood",
   "block.betalatethannever.stripped_palm_wood": "Stripped Palm Wood",
   "block.betalatethannever.palm_planks": "Palm Planks",
   "block.betalatethannever.palm_leaves": "Palm Leaves",
-  "item.betalatethannever.coconut_chunk": "Coconut Chunk",
   "block.betalatethannever.lazuli_cobblestone": "Lazuli Cobblestone",
   "block.betalatethannever.polished_lapis_block": "Polished Block of Lapis Lazuli",
   "block.betalatethannever.blue_bricks": "Blue Bricks",
-  "block.betalatethannever.brown_bricks": "Brown Bricks"
+  "block.betalatethannever.brown_bricks": "Brown Bricks",
+  "block.betalatethannever.charged_soul_fire": "Charged Soul Fire"
 }

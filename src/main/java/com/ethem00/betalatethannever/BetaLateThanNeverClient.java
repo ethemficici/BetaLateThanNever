@@ -27,6 +27,7 @@ public class BetaLateThanNeverClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.UNLIT_DYNAMITE, UnlitDynamiteEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MODEL_DYNAMITE_LAYER, DynamiteEntityModel::getTexturedModelData);
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CHARGED_SOUL_FIRE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PALM_LEAVES, RenderLayer.getCutout());
         ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> 0x7cbd6b, ModBlocks.PALM_LEAVES);
 
