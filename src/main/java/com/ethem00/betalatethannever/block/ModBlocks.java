@@ -46,12 +46,42 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK)));
     public static final Block LAZULI_COBBLESTONE = registerBlockMethod("lazuli_cobblestone",
             new Block(AbstractBlock.Settings.copy(Blocks.MOSSY_COBBLESTONE)));
-    public static final Block BROWN_BRICKS = registerBlockMethod("brown_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.BROWN))); //TODO: GIVE THIS AN ACHIEVEMENT WHEN YOU CRAFT IT YOU MORON!
+
+
+    public static final Block PINK_BRICKS = registerBlockMethod("pink_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.PINK)));
+    public static final Block MAGENTA_BRICKS = registerBlockMethod("magenta_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.MAGENTA)));
+    public static final Block PURPLE_BRICKS = registerBlockMethod("purple_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.PURPLE)));
     public static final Block BLUE_BRICKS = registerBlockMethod("blue_bricks",
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.LAPIS_BLUE)));
+    public static final Block LIGHT_BLUE_BRICKS = registerBlockMethod("light_blue_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block CYAN_BRICKS = registerBlockMethod("cyan_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.CYAN)));
+    public static final Block GREEN_BRICKS = registerBlockMethod("green_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.GREEN)));
+    public static final Block LIME_BRICKS = registerBlockMethod("lime_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.LIME)));
+    public static final Block YELLOW_BRICKS = registerBlockMethod("yellow_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.YELLOW)));
+    public static final Block ORANGE_BRICKS = registerBlockMethod("orange_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.ORANGE)));
+    public static final Block RED_BRICKS = registerBlockMethod("red_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.RED)));
+    public static final Block BROWN_BRICKS = registerBlockMethod("brown_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.BROWN))); //TODO: GIVE THIS AN ACHIEVEMENT WHEN YOU CRAFT IT YOU MORON!
+    public static final Block BLACK_BRICKS = registerBlockMethod("black_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.BLACK)));
+    public static final Block GRAY_BRICKS = registerBlockMethod("gray_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.GRAY)));
+    public static final Block LIGHT_GRAY_BRICKS = registerBlockMethod("light_gray_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block WHITE_BRICKS = registerBlockMethod("white_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.WHITE)));
 
-    //Tamper Path Blocks
+    // Tamper Path Blocks
     public static final Block GRASS_PATH = registerBlockMethod("grass_path",
             new DirtPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).strength(0.65F).sounds(BlockSoundGroup.GRASS).blockVision(Blocks::always).suffocates(Blocks::always)));
     public static final Block PODZOL_PATH = registerBlockMethod("podzol_path",
@@ -74,19 +104,20 @@ public class ModBlocks {
             new MudPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_CYAN).strength(0.65F).sounds(BlockSoundGroup.PACKED_MUD).blockVision(Blocks::always).suffocates(Blocks::always)));
     public static final Block CLAY_PATH = registerBlockMethod("clay_path",
             new ClayPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.IRON_GRAY).strength(0.65F).sounds(BlockSoundGroup.GRAVEL).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block BRICK_PATH = registerBlockMethod("brick_path",
+            new DirtPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.RED).strength(0.65F).sounds(BlockSoundGroup.STONE).blockVision(Blocks::always).suffocates(Blocks::always)));
+
     public static final Block SNOW_PATH = registerBlockMethod("snow_path",
             new SnowPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.WHITE_GRAY).strength(0.35F).sounds(BlockSoundGroup.SNOW).blockVision(Blocks::always).suffocates(Blocks::always)));
 
-
-
-    // Coconut and Palm Tree Variants
+    // Coconut
     public static final Block COCONUT = registerBlockMethod("coconut", //TODO: CARVED CONVERSION
             new CoconutBlock(CoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.5F).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
     public static final Block CARVED_COCONUT = registerBlockMethod("carved_coconut",
             new CarvedCoconutBlock(CarvedCoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.5F).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
     public static final Block COCO_LANTERN = registerBlockMethod("coco_lantern",
             new CarvedCoconutBlock(CarvedCoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.5F).sounds(BlockSoundGroup.WOOD).luminance(state -> 15).allowsSpawning(Blocks::always).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
-    //
+    // Palm Tree
     public static final Block PALM_LEAVES = registerBlockMethod("palm_leaves",
             Blocks.createLeavesBlock(BlockSoundGroup.GRASS)); // TRANSPARENT BLOCKS NEED CUTOUT RENDER LAYER WHEN CLIENT IS INITIALIZED
     public static final Block PALM_LOG = registerBlockMethod("palm_log",
@@ -133,6 +164,8 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
 
+            entries.addAfter(Items.BRICKS, BRICK_PATH);
+
             //TODO: create Lazuli Cobblestone stairs, slabs, walls, etc.
             entries.addAfter(Items.LAPIS_BLOCK, POLISHED_LAPIS_BLOCK);
             entries.addAfter(Items.LAPIS_BLOCK, LAZULI_COBBLESTONE);
@@ -146,25 +179,25 @@ public class ModBlocks {
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COLORED_BLOCKS).register(entries -> {
+
             //Colored Order:
             //White, Light Gray, Gray, Black, Brown, Red, Orange, Yellow, Lime, Green, Cyan, Light Blue, Blue, Purple, Magenta, Pink
-
-            //TODO: Pink
-            //TODO: Magenta
-            //TODO: Purple
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, PINK_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, MAGENTA_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, PURPLE_BRICKS);
             entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, BLUE_BRICKS);
-            //TODO: Light Blue
-            //TODO: Cyan
-            //TODO: Green
-            //TODO: Lime
-            //TODO: Yellow
-            //TODO: Orange
-            //TODO: Red
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, LIGHT_BLUE_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, CYAN_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, GREEN_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, LIME_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, YELLOW_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, ORANGE_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, RED_BRICKS);
             entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, BROWN_BRICKS);
-            //TODO: Black
-            //TODO: Gray
-            //TODO: Light Gray
-            //TODO: White
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, BLACK_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, GRAY_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, LIGHT_GRAY_BRICKS);
+            entries.addAfter(Items.PINK_GLAZED_TERRACOTTA, WHITE_BRICKS);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {

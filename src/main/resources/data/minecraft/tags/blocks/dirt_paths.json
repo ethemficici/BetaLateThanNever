@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "betalatethannever:grass_path",
+    "betalatethannever:podzol_path",
+    "betalatethannever:mycelium_path",
+    "minecraft:dirt_path",
+    "betalatethannever:coarse_dirt_path",
+    "betalatethannever:rooted_dirt_path"
+  ]
+}

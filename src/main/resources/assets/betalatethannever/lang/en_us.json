@@ -4,6 +4,8 @@
   "item.betalatethannever.soul_charge": "Soul Charge",
   "item.betalatethannever.stripper": "Stripper",
   "item.betalatethannever.tamper": "Tamper",
+  "entity.betalatethannever.unlit_dynamite": "Unlit Dynamite",
+  "entity.betalatethannever.dynamite": "Lit Dynamite",
 
   "block.betalatethannever.blackpowder_trail": "Blackpowder",
   "block.betalatethannever.dynamite_block": "Dynamite",
@@ -21,8 +23,6 @@
   "block.betalatethannever.palm_leaves": "Palm Leaves",
   "block.betalatethannever.lazuli_cobblestone": "Lazuli Cobblestone",
   "block.betalatethannever.polished_lapis_block": "Polished Block of Lapis Lazuli",
-  "block.betalatethannever.blue_bricks": "Blue Bricks",
-  "block.betalatethannever.brown_bricks": "Brown Bricks",
   "block.betalatethannever.charged_soul_fire": "Charged Soul Fire",
 
   "block.betalatethannever.grass_path": "Grass Path",
@@ -36,5 +36,23 @@
   "block.betalatethannever.red_sand_path": "Red Sand Path",
   "block.betalatethannever.mud_path": "Mud Path",
   "block.betalatethannever.clay_path": "Clay Path",
-  "block.betalatethannever.snow_path": "Snow Path"
+  "block.betalatethannever.snow_path": "Snow Path",
+  "block.betalatethannever.brick_path": "Brick Path",
+
+  "block.betalatethannever.pink_bricks": "Pink Bricks",
+  "block.betalatethannever.magenta_bricks": "Magenta Bricks",
+  "block.betalatethannever.purple_bricks": "Purple Bricks",
+  "block.betalatethannever.blue_bricks": "Blue Bricks",
+  "block.betalatethannever.light_blue_bricks": "Light Blue Bricks",
+  "block.betalatethannever.cyan_bricks": "Cyan Bricks",
+  "block.betalatethannever.green_bricks": "Green Bricks",
+  "block.betalatethannever.lime_bricks": "Lime Bricks",
+  "block.betalatethannever.yellow_bricks": "Yellow Bricks",
+  "block.betalatethannever.orange_bricks": "Orange Bricks",
+  "block.betalatethannever.red_bricks": "Red Bricks",
+  "block.betalatethannever.brown_bricks": "Brown Bricks",
+  "block.betalatethannever.black_bricks": "Black Bricks",
+  "block.betalatethannever.gray_bricks": "Gray Bricks",
+  "block.betalatethannever.light_gray_bricks": "Light Gray Bricks",
+  "block.betalatethannever.white_bricks": "White Bricks"
 }

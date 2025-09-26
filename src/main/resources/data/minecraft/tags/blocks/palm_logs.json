@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+
+    "betalatethannever:palm_log",
+    "betalatethannever:palm_wood",
+    "betalatethannever:stripped_palm_log",
+    "betalatethannever:stripped_palm_wood"
+  ]
+}

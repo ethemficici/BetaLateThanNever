@@ -41,6 +41,8 @@ public class TamperItem extends Item {
                     .put(Blocks.MUD, ModBlocks.MUD_PATH.getDefaultState())
                     .put(Blocks.CLAY, ModBlocks.CLAY_PATH.getDefaultState())
                     .put(Blocks.SNOW_BLOCK, ModBlocks.SNOW_PATH.getDefaultState())
+
+                    //TODO: If used on replaceable block, instant break.
                     .build()
     );
 
@@ -76,6 +78,15 @@ public class TamperItem extends Item {
 
                 CampfireBlock.extinguish(context.getPlayer(), world, blockPos, blockState);
                 blockState3 = blockState.with(CampfireBlock.LIT, false);
+            } else if(blockState.isReplaceable())
+            {
+                /*
+                world.breakBlock(blockPos, true);
+                if (playerEntity != null) {
+                    context.getStack().damage(1, playerEntity, p -> p.sendToolBreakStatus(context.getHand()));
+                    return ActionResult.success(world.isClient);
+                }
+                */
             }
 
             if (blockState3 != null) {
