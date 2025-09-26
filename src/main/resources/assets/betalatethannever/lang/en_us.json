@@ -3,6 +3,7 @@
   "item.betalatethannever.coconut_chunk": "Coconut Chunk",
   "item.betalatethannever.soul_charge": "Soul Charge",
   "item.betalatethannever.stripper": "Stripper",
+  "item.betalatethannever.tamper": "Tamper",
 
   "block.betalatethannever.blackpowder_trail": "Blackpowder",
   "block.betalatethannever.dynamite_block": "Dynamite",
@@ -22,5 +23,18 @@
   "block.betalatethannever.polished_lapis_block": "Polished Block of Lapis Lazuli",
   "block.betalatethannever.blue_bricks": "Blue Bricks",
   "block.betalatethannever.brown_bricks": "Brown Bricks",
-  "block.betalatethannever.charged_soul_fire": "Charged Soul Fire"
+  "block.betalatethannever.charged_soul_fire": "Charged Soul Fire",
+
+  "block.betalatethannever.grass_path": "Grass Path",
+  "block.betalatethannever.podzol_path": "Podzol Path",
+  "block.betalatethannever.mycelium_path": "Mycelium Path",
+  "block.betalatethannever.coarse_dirt_path": "Coarse Dirt Path",
+  "block.betalatethannever.rooted_dirt_path": "Rooted Dirt Path",
+  "block.betalatethannever.gravel_path": "Gravel Path",
+  "block.betalatethannever.coarse_gravel_path": "Coarse Gravel Path",
+  "block.betalatethannever.sand_path": "Sand Path",
+  "block.betalatethannever.red_sand_path": "Red Sand Path",
+  "block.betalatethannever.mud_path": "Mud Path",
+  "block.betalatethannever.clay_path": "Clay Path",
+  "block.betalatethannever.snow_path": "Snow Path"
 }

@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "AAB",
-    "A  ",
-    "B  "
+    " B ",
+    " B ",
+    "AAA"
   ],
   "key": {
     "A": {
@@ -15,7 +15,7 @@
     }
   },
   "result": {
-    "item": "betalatethannever:stripper",
+    "item": "betalatethannever:tamper",
     "count": 1
   }
 }

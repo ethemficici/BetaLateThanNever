@@ -15,6 +15,7 @@ public class ModItems {
     public static final Item COCONUT_CHUNK = registerItemMethod("coconut_chunk", new Item(new Item.Settings().food(ModFoodComponents.COCONUT_CHUNK)));
     public static final Item SOUL_CHARGE = registerItemMethod("soul_charge", new SoulChargeItem(new Item.Settings()));
     public static final Item STRIPPER = registerItemMethod("stripper", new StripperItem(new Item.Settings().maxCount(1).maxDamage(256)));
+    public static final Item TAMPER = registerItemMethod("tamper", new TamperItem(new Item.Settings().maxCount(1).maxDamage(256)));
 
 
     private static Item registerItemMethod(String name, Item item) {
@@ -30,6 +31,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
             entries.addAfter(Items.FIRE_CHARGE, SOUL_CHARGE);
+            entries.addAfter(Items.SHEARS, TAMPER);
             entries.addAfter(Items.SHEARS, STRIPPER);
         });
 

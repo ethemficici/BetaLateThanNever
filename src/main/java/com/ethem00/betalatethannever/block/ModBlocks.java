@@ -51,6 +51,34 @@ public class ModBlocks {
     public static final Block BLUE_BRICKS = registerBlockMethod("blue_bricks",
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.LAPIS_BLUE)));
 
+    //Tamper Path Blocks
+    public static final Block GRASS_PATH = registerBlockMethod("grass_path",
+            new DirtPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).strength(0.65F).sounds(BlockSoundGroup.GRASS).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block PODZOL_PATH = registerBlockMethod("podzol_path",
+            new DirtPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).strength(0.65F).sounds(BlockSoundGroup.GRASS).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block MYCELIUM_PATH = registerBlockMethod("mycelium_path",
+            new DirtPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.PALE_PURPLE).strength(0.65F).sounds(BlockSoundGroup.GRASS).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block COARSE_DIRT_PATH = registerBlockMethod("coarse_dirt_path",
+            new CoarseDirtPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).strength(0.65F).sounds(BlockSoundGroup.GRASS).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block ROOTED_DIRT_PATH = registerBlockMethod("rooted_dirt_path",
+            new RootedDirtPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).strength(0.65F).sounds(BlockSoundGroup.GRASS).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block GRAVEL_PATH = registerBlockMethod("gravel_path",
+            new GravelPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).strength(0.65F).sounds(BlockSoundGroup.GRAVEL).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block COARSE_GRAVEL_PATH = registerBlockMethod("coarse_gravel_path",
+            new CoarseGravelPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).strength(0.65F).sounds(BlockSoundGroup.GRAVEL).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block SAND_PATH = registerBlockMethod("sand_path",
+            new SandPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_YELLOW).strength(0.65F).sounds(BlockSoundGroup.SAND).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block RED_SAND_PATH = registerBlockMethod("red_sand_path",
+            new RedSandPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_ORANGE).strength(0.65F).sounds(BlockSoundGroup.SAND).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block MUD_PATH = registerBlockMethod("mud_path",
+            new MudPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_CYAN).strength(0.65F).sounds(BlockSoundGroup.PACKED_MUD).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block CLAY_PATH = registerBlockMethod("clay_path",
+            new ClayPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.IRON_GRAY).strength(0.65F).sounds(BlockSoundGroup.GRAVEL).blockVision(Blocks::always).suffocates(Blocks::always)));
+    public static final Block SNOW_PATH = registerBlockMethod("snow_path",
+            new SnowPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.WHITE_GRAY).strength(0.35F).sounds(BlockSoundGroup.SNOW).blockVision(Blocks::always).suffocates(Blocks::always)));
+
+
+
     // Coconut and Palm Tree Variants
     public static final Block COCONUT = registerBlockMethod("coconut", //TODO: CARVED CONVERSION
             new CoconutBlock(CoconutBlock.Settings.create().mapColor(MapColor.TERRACOTTA_BROWN).strength(1.5F).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).instrument(Instrument.BASEDRUM)));
@@ -140,7 +168,21 @@ public class ModBlocks {
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+
+            entries.addAfter(Items.SNOW_BLOCK, SNOW_PATH);
+            entries.addAfter(Items.RED_SAND, RED_SAND_PATH);
+            entries.addAfter(Items.SAND, SAND_PATH);
+            entries.addAfter(Items.CLAY, CLAY_PATH);
+            entries.addAfter(Items.MUD, MUD_PATH);
+            entries.addAfter(Items.ROOTED_DIRT, ROOTED_DIRT_PATH);
+            entries.addAfter(Items.COARSE_DIRT, COARSE_DIRT_PATH);
+            entries.addAfter(Items.MYCELIUM, MYCELIUM_PATH);
+            entries.addAfter(Items.PODZOL, PODZOL_PATH);
+            entries.addAfter(Items.GRASS_BLOCK, GRASS_PATH);
+
+            entries.addAfter(Items.GRAVEL, COARSE_GRAVEL_PATH);
             entries.addAfter(Items.GRAVEL, COARSE_GRAVEL);
+            entries.addAfter(Items.GRAVEL, GRAVEL_PATH);
 
             entries.addAfter(Items.JACK_O_LANTERN, COCO_LANTERN);
             entries.addAfter(Items.JACK_O_LANTERN, CARVED_COCONUT);
@@ -151,6 +193,7 @@ public class ModBlocks {
 
             entries.addAfter(Items.CHERRY_LEAVES, PALM_LEAVES);
             entries.addAfter(Items.CHERRY_LOG, PALM_LOG);
+
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
