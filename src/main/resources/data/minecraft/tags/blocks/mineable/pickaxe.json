@@ -3,9 +3,24 @@
   "values": [
     "betalatethannever:lazuli_cobblestone",
     "betalatethannever:polished_lapis_block",
-    "betalatethannever:blue_bricks",
-    "betalatethannever:brown_bricks",
     "betalatethannever:mud_path",
-    "betalatethannever:brick_path"
+    "betalatethannever:brick_path",
+
+    "betalatethannever:pink_bricks",
+    "betalatethannever:magenta_bricks",
+    "betalatethannever:purple_bricks",
+    "betalatethannever:blue_bricks",
+    "betalatethannever:light_blue_bricks",
+    "betalatethannever:cyan_bricks",
+    "betalatethannever:green_bricks",
+    "betalatethannever:lime_bricks",
+    "betalatethannever:yellow_bricks",
+    "betalatethannever:orange_bricks",
+    "betalatethannever:red_bricks",
+    "betalatethannever:brown_bricks",
+    "betalatethannever:black_bricks",
+    "betalatethannever:gray_bricks",
+    "betalatethannever:light_gray_bricks",
+    "betalatethannever:white_bricks"
   ]
 }

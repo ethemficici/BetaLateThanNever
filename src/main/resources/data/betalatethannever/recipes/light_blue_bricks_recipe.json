@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " A ",
+    "ABA",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:brick"
+    },
+    "B": {
+      "item": "minecraft:light_blue_concrete_powder"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:light_blue_bricks",
+    "count": 1
+  }
+}
