@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 
 public class ModLootTables {
 
+    public static final Identifier LAPIS_DUNGEON = new Identifier("betalatethannever", "chests/lapis_dungeon");
     public static final Identifier CREEPER_DUNGEON = new Identifier("betalatethannever", "chests/creeper_dungeon");
 
     public static void registerModLootTables() {

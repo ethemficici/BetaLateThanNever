@@ -41,9 +41,17 @@ public class BetaLateThanNever implements ModInitializer {
                 RegistryKeys.PLACED_FEATURE,
                 new Identifier(BetaLateThanNever.MOD_ID, "lapis_dungeon")
         );
+        RegistryKey<PlacedFeature> lapisDungeonDeepPlaced = RegistryKey.of(
+                RegistryKeys.PLACED_FEATURE,
+                new Identifier(BetaLateThanNever.MOD_ID, "lapis_dungeon_deep")
+        );
         RegistryKey<PlacedFeature> creeperDungeonPlaced = RegistryKey.of(
                 RegistryKeys.PLACED_FEATURE,
                 new Identifier(BetaLateThanNever.MOD_ID, "creeper_dungeon")
+        );
+        RegistryKey<PlacedFeature> creeperDungeonDeepPlaced = RegistryKey.of(
+                RegistryKeys.PLACED_FEATURE,
+                new Identifier(BetaLateThanNever.MOD_ID, "creeper_dungeon_deep")
         );
 
         BiomeModifications.addFeature(
@@ -54,7 +62,17 @@ public class BetaLateThanNever implements ModInitializer {
         BiomeModifications.addFeature(
                 BiomeSelectors.foundInOverworld(),
                 GenerationStep.Feature.UNDERGROUND_STRUCTURES,
+                lapisDungeonDeepPlaced
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_STRUCTURES,
                 creeperDungeonPlaced
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.foundInOverworld(),
+                GenerationStep.Feature.UNDERGROUND_STRUCTURES,
+                creeperDungeonDeepPlaced
         );
 
 

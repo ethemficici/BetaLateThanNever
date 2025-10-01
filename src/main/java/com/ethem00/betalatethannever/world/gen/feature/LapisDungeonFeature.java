@@ -1,6 +1,7 @@
 package com.ethem00.betalatethannever.world.gen.feature;
 
 import com.ethem00.betalatethannever.block.ModBlocks;
+import com.ethem00.betalatethannever.loot.ModLootTables;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
@@ -9,7 +10,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.loot.LootTables;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.structure.StructurePiece;
 import net.minecraft.util.Util;
@@ -18,7 +18,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
-import net.minecraft.world.gen.feature.DungeonFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 import org.slf4j.Logger;
@@ -113,7 +112,7 @@ public class LapisDungeonFeature extends Feature<DefaultFeatureConfig> {
                             this.setBlockStateIf(
                                     structureWorldAccess, blockPos3, StructurePiece.orientateChest(structureWorldAccess, blockPos3, Blocks.CHEST.getDefaultState()), predicate
                             );
-                            LootableContainerBlockEntity.setLootTable(structureWorldAccess, random, blockPos3, LootTables.SIMPLE_DUNGEON_CHEST);
+                            LootableContainerBlockEntity.setLootTable(structureWorldAccess, random, blockPos3, ModLootTables.LAPIS_DUNGEON);
                             break;
                         }
                     }
