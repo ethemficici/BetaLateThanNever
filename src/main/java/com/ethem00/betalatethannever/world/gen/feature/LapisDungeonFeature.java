@@ -27,7 +27,7 @@ import java.util.function.Predicate;
 
 public class LapisDungeonFeature extends Feature<DefaultFeatureConfig> {
     private static final Logger LOGGER = LogUtils.getLogger();
-    private static final EntityType<?>[] MOB_SPAWNER_ENTITIES = new EntityType[]{EntityType.CREEPER, EntityType.CREEPER, EntityType.CREEPER, EntityType.CREEPER};
+    private static final EntityType<?>[] MOB_SPAWNER_ENTITIES = new EntityType[]{EntityType.STRAY, EntityType.VEX, EntityType.CAVE_SPIDER, EntityType.STRAY};
     private static final BlockState AIR = Blocks.CAVE_AIR.getDefaultState();
 
     public LapisDungeonFeature(Codec<DefaultFeatureConfig> codec) {

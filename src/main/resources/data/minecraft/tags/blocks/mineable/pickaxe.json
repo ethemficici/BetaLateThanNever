@@ -21,6 +21,9 @@
     "betalatethannever:black_bricks",
     "betalatethannever:gray_bricks",
     "betalatethannever:light_gray_bricks",
-    "betalatethannever:white_bricks"
+    "betalatethannever:white_bricks",
+
+    "betalatethannever:dungeon_bricks",
+    "betalatethannever:mossy_dungeon_bricks"
   ]
 }

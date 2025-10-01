@@ -54,5 +54,7 @@
   "block.betalatethannever.black_bricks": "Black Bricks",
   "block.betalatethannever.gray_bricks": "Gray Bricks",
   "block.betalatethannever.light_gray_bricks": "Light Gray Bricks",
-  "block.betalatethannever.white_bricks": "White Bricks"
+  "block.betalatethannever.white_bricks": "White Bricks",
+  "block.betalatethannever.dungeon_bricks": "Dungeon Bricks",
+  "block.betalatethannever.mossy_dungeon_bricks": "Mossy Dungeon Bricks"
 }

@@ -45,7 +45,7 @@ public class ModBlocks {
     public static final Block POLISHED_LAPIS_BLOCK = registerBlockMethod("polished_lapis_block",
             new Block(AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK)));
     public static final Block LAZULI_COBBLESTONE = registerBlockMethod("lazuli_cobblestone",
-            new Block(AbstractBlock.Settings.copy(Blocks.MOSSY_COBBLESTONE)));
+            new Block(AbstractBlock.Settings.copy(Blocks.MOSSY_COBBLESTONE).mapColor(MapColor.STONE_GRAY)));
 
 
     public static final Block PINK_BRICKS = registerBlockMethod("pink_bricks",
@@ -80,6 +80,11 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.LIGHT_GRAY)));
     public static final Block WHITE_BRICKS = registerBlockMethod("white_bricks",
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.WHITE)));
+
+    public static final Block DUNGEON_BRICKS = registerBlockMethod("dungeon_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.STONE_GRAY)));
+    public static final Block MOSSY_DUNGEON_BRICKS = registerBlockMethod("mossy_dungeon_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.STONE_GRAY)));
 
     // Tamper Path Blocks
     public static final Block GRASS_PATH = registerBlockMethod("grass_path",
@@ -163,6 +168,9 @@ public class ModBlocks {
         BetaLateThanNever.LOGGER.info("Registering modded blocks from " + BetaLateThanNever.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+
+            entries.addAfter(Items.MOSSY_STONE_BRICK_WALL, MOSSY_DUNGEON_BRICKS);
+            entries.addAfter(Items.MOSSY_STONE_BRICK_WALL, DUNGEON_BRICKS);
 
             entries.addAfter(Items.BRICKS, BRICK_PATH);
 
