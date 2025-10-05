@@ -36,13 +36,13 @@ public class DynamiteBlock extends FallingBlock {
         this.setDefaultState(this.getDefaultState().with(UNSTABLE, false));
     }
 
-    private static VoxelShape cuboidPx(float x1, float y1, float z1, float x2, float y2, float z2) {
+    private static VoxelShape cuboidPxl(float x1, float y1, float z1, float x2, float y2, float z2) {
         return VoxelShapes.cuboid(x1 / 16f, y1 / 16f, z1 / 16f, x2 / 16f, y2 / 16f, z2 / 16f);
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return cuboidPx(6, 0, 6, 10, 12, 10); // same as your original "pixel" values
+        return cuboidPxl(6, 0, 6, 10, 12, 10); // same as your original "pixel" values
     }
 
     @Override

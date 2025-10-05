@@ -11,6 +11,11 @@
         },
         {
           "type": "minecraft:item",
+          "name": "betalatethannever:volted_pile",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:golden_apple",
           "weight": 15
         },
@@ -52,22 +57,22 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:chainmail_helmet",
-          "weight": 5
+          "weight": 10
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:chainmail_chestplate",
-          "weight": 5
+          "weight": 10
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:chainmail_leggings",
-          "weight": 5
+          "weight": 10
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:chainmail_boots",
-          "weight": 5
+          "weight": 10
         },
         {
           "type": "minecraft:item",

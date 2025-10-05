@@ -1,0 +1,139 @@
+{
+  "variants": {
+    "facing=north,lit=false,has_cell=false,has_water=false,has_grit=false": {
+      "model": "betalatethannever:block/polisher"
+    },
+    "facing=north,lit=false,has_cell=true,has_water=false,has_grit=false": {
+      "model": "betalatethannever:block/polisher_cell"
+    },
+    "facing=north,lit=false,has_cell=false,has_water=true,has_grit=false": {
+      "model": "betalatethannever:block/polisher_water"
+    },
+    "facing=north,lit=false,has_cell=false,has_water=false,has_grit=true": {
+      "model": "betalatethannever:block/polisher_grit"
+    },
+    "facing=north,lit=false,has_cell=true,has_water=true,has_grit=false": {
+      "model": "betalatethannever:block/polisher_cell_water"
+    },
+    "facing=north,lit=false,has_cell=true,has_water=false,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_grit"
+    },
+    "facing=north,lit=false,has_cell=false,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_water_grit"
+    },
+    "facing=north,lit=false,has_cell=true,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_water_grit"
+    },
+    "facing=north,lit=true,has_cell=true,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_water_grit_lit"
+    },
+    "facing=east,lit=false,has_cell=false,has_water=false,has_grit=false": {
+      "model": "betalatethannever:block/polisher",
+      "y": 90
+    },
+    "facing=east,lit=false,has_cell=true,has_water=false,has_grit=false": {
+      "model": "betalatethannever:block/polisher_cell",
+      "y": 90
+    },
+    "facing=east,lit=false,has_cell=false,has_water=true,has_grit=false": {
+      "model": "betalatethannever:block/polisher_water",
+      "y": 90
+    },
+    "facing=east,lit=false,has_cell=false,has_water=false,has_grit=true": {
+      "model": "betalatethannever:block/polisher_grit",
+      "y": 90
+    },
+    "facing=east,lit=false,has_cell=true,has_water=true,has_grit=false": {
+      "model": "betalatethannever:block/polisher_cell_water",
+      "y": 90
+    },
+    "facing=east,lit=false,has_cell=true,has_water=false,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_grit",
+      "y": 90
+    },
+    "facing=east,lit=false,has_cell=false,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_water_grit",
+      "y": 90
+    },
+    "facing=east,lit=false,has_cell=true,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_water_grit",
+      "y": 90
+    },
+    "facing=east,lit=true,has_cell=true,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_water_grit_lit",
+      "y": 90
+    },
+    "facing=south,lit=false,has_cell=false,has_water=false,has_grit=false": {
+      "model": "betalatethannever:block/polisher",
+      "y": 180
+    },
+    "facing=south,lit=false,has_cell=true,has_water=false,has_grit=false": {
+      "model": "betalatethannever:block/polisher_cell",
+      "y": 180
+    },
+    "facing=south,lit=false,has_cell=false,has_water=true,has_grit=false": {
+      "model": "betalatethannever:block/polisher_water",
+      "y": 180
+    },
+    "facing=south,lit=false,has_cell=false,has_water=false,has_grit=true": {
+      "model": "betalatethannever:block/polisher_grit",
+      "y": 180
+    },
+    "facing=south,lit=false,has_cell=true,has_water=true,has_grit=false": {
+      "model": "betalatethannever:block/polisher_cell_water",
+      "y": 180
+    },
+    "facing=south,lit=false,has_cell=true,has_water=false,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_grit",
+      "y": 180
+    },
+    "facing=south,lit=false,has_cell=false,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_water_grit",
+      "y": 180
+    },
+    "facing=south,lit=false,has_cell=true,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_water_grit",
+      "y": 180
+    },
+    "facing=south,lit=true,has_cell=true,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_water_grit_lit",
+      "y": 180
+    },
+    "facing=west,lit=false,has_cell=false,has_water=false,has_grit=false": {
+      "model": "betalatethannever:block/polisher",
+      "y": 270
+    },
+    "facing=west,lit=false,has_cell=true,has_water=false,has_grit=false": {
+      "model": "betalatethannever:block/polisher_cell",
+      "y": 270
+    },
+    "facing=west,lit=false,has_cell=false,has_water=true,has_grit=false": {
+      "model": "betalatethannever:block/polisher_water",
+      "y": 270
+    },
+    "facing=west,lit=false,has_cell=false,has_water=false,has_grit=true": {
+      "model": "betalatethannever:block/polisher_grit",
+      "y": 270
+    },
+    "facing=west,lit=false,has_cell=true,has_water=true,has_grit=false": {
+      "model": "betalatethannever:block/polisher_cell_water",
+      "y": 270
+    },
+    "facing=west,lit=false,has_cell=true,has_water=false,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_grit",
+      "y": 270
+    },
+    "facing=west,lit=false,has_cell=false,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_water_grit",
+      "y": 270
+    },
+    "facing=west,lit=false,has_cell=true,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_water_grit",
+      "y": 270
+    },
+    "facing=west,lit=true,has_cell=true,has_water=true,has_grit=true": {
+      "model": "betalatethannever:block/polisher_cell_water_grit_lit",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "ABC",
+    "DDD"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:hopper"
+    },
+    "B": {
+      "item": "minecraft:iron_block"
+    },
+    "C": {
+      "item": "minecraft:cauldron"
+    },
+    "D": {
+      "item": "minecraft:smooth_stone_slab"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:polisher",
+    "count": 1
+  }
+}

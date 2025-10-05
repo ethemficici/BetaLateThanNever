@@ -23,19 +23,19 @@ public class ModBlocks {
     // Misc
     public static final Block COARSE_GRAVEL = registerBlockMethod("coarse_gravel",
             new CoarseGravelBlock(AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.SNARE).strength(0.75F).sounds(BlockSoundGroup.GRAVEL)));
-
     public static final Block BLACKPOWDER_TRAIL = registerBlockMethod("blackpowder_trail",
             new Block(AbstractBlock.Settings.create().noCollision().breakInstantly().pistonBehavior(PistonBehavior.DESTROY)));
-
     public static final Block DYNAMITE_BLOCK = registerBlockMethod("dynamite_block",
             new DynamiteBlock(AbstractBlock.Settings.create().mapColor(MapColor.BRIGHT_RED).notSolid().noBlockBreakParticles().pistonBehavior(PistonBehavior.DESTROY).breakInstantly().sounds(BlockSoundGroup.GRASS).burnable().solidBlock(Blocks::never).nonOpaque()));
+    public static final Block CHARGED_SOUL_FIRE = registerBlockMethod("charged_soul_fire",
+            new CustomSoulFireBlock(AbstractBlock.Settings.copy(Blocks.SOUL_FIRE)));
 
 
     //Block Entities
     public static final Block MENDER_CHEST = registerBlockMethod("mender_chest",
             new Block(AbstractBlock.Settings.copy(Blocks.ENDER_CHEST)));
-    public static final Block CHARGED_SOUL_FIRE = registerBlockMethod("charged_soul_fire",
-            new CustomSoulFireBlock(AbstractBlock.Settings.copy(Blocks.SOUL_FIRE)));
+    public static final Block POLISHER = registerBlockMethod("polisher",
+            new PolisherBlock(AbstractBlock.Settings.copy(Blocks.FURNACE)));
 
     //Decoration Blocks
     public static final Block HAPPY_PUMPKIN = registerBlockMethod("happy_pumpkin",
@@ -172,7 +172,7 @@ public class ModBlocks {
             entries.addAfter(Items.MOSSY_STONE_BRICK_WALL, MOSSY_DUNGEON_BRICKS);
             entries.addAfter(Items.MOSSY_STONE_BRICK_WALL, DUNGEON_BRICKS);
 
-            entries.addAfter(Items.BRICKS, BRICK_PATH);
+            entries.addAfter(Items.BRICK_WALL, BRICK_PATH);
 
             //TODO: create Lazuli Cobblestone stairs, slabs, walls, etc.
             entries.addAfter(Items.LAPIS_BLOCK, POLISHED_LAPIS_BLOCK);
@@ -240,6 +240,10 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
             entries.addAfter(Items.FLINT_AND_STEEL, BLACKPOWDER_TRAIL);
             entries.addAfter(Items.ELYTRA, DYNAMITE_BLOCK);
+        });
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
+            entries.addAfter(Items.BLAST_FURNACE, POLISHER);
         });
 
         //Register Flammable Blocks

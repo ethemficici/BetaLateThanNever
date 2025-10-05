@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
 
+    public static final Item VOLTED_PILE = registerItemMethod("volted_pile", new Item(new Item.Settings()));
     public static final Item CHERT = registerItemMethod("chert", new Item(new Item.Settings()));
     public static final Item COCONUT_CHUNK = registerItemMethod("coconut_chunk", new Item(new Item.Settings().food(ModFoodComponents.COCONUT_CHUNK)));
     public static final Item SOUL_CHARGE = registerItemMethod("soul_charge", new SoulChargeItem(new Item.Settings()));
@@ -27,6 +28,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.addAfter(Items.FLINT, CHERT);
+            entries.addAfter(Items.BLAZE_POWDER, VOLTED_PILE);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
@@ -38,6 +40,5 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
             entries.addAfter(Items.MELON_SLICE, COCONUT_CHUNK);
         });
-
     }
 }

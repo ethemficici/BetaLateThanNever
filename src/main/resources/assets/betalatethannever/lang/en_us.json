@@ -4,8 +4,11 @@
   "item.betalatethannever.soul_charge": "Soul Charge",
   "item.betalatethannever.stripper": "Stripper",
   "item.betalatethannever.tamper": "Tamper",
+  "item.betalatethannever.volted_pile": "Volted Pile",
   "entity.betalatethannever.unlit_dynamite": "Unlit Dynamite",
   "entity.betalatethannever.dynamite": "Lit Dynamite",
+
+  "block.betalatethannever.polisher": "Polisher",
 
   "block.betalatethannever.blackpowder_trail": "Blackpowder",
   "block.betalatethannever.dynamite_block": "Dynamite",

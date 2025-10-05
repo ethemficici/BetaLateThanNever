@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "ACB",
+    "CB "
+  ],
+  "key": {
+    "A": {
+      "item": "betalatethannever:chert"
+    },
+    "B": {
+      "item": "minecraft:charcoal"
+    },
+    "C": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:blackpowder",
+    "count": 3
+  }
+}

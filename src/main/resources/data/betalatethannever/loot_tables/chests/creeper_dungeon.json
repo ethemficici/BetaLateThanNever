@@ -6,6 +6,11 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "betalatethannever:volted_pile",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:golden_apple",
           "weight": 15
         },
