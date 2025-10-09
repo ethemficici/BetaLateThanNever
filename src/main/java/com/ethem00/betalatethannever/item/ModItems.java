@@ -13,7 +13,13 @@ public class ModItems {
 
     public static final Item VOLTED_PILE = registerItemMethod("volted_pile", new Item(new Item.Settings()));
     public static final Item CHERT = registerItemMethod("chert", new Item(new Item.Settings()));
+    public static final Item MAZITE = registerItemMethod("mazite", new Item(new Item.Settings()));
+    public static final Item MAZITE_ORB = registerItemMethod("mazite_orb", new Item(new Item.Settings()));
+
+
     public static final Item COCONUT_CHUNK = registerItemMethod("coconut_chunk", new Item(new Item.Settings().food(ModFoodComponents.COCONUT_CHUNK)));
+
+
     public static final Item SOUL_CHARGE = registerItemMethod("soul_charge", new SoulChargeItem(new Item.Settings()));
     public static final Item STRIPPER = registerItemMethod("stripper", new StripperItem(new Item.Settings().maxCount(1).maxDamage(256)));
     public static final Item TAMPER = registerItemMethod("tamper", new TamperItem(new Item.Settings().maxCount(1).maxDamage(256)));
@@ -28,7 +34,10 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.addAfter(Items.FLINT, CHERT);
-            entries.addAfter(Items.BLAZE_POWDER, VOLTED_PILE);
+            entries.addAfter(Items.EMERALD, MAZITE);
+
+            entries.addAfter(Items.DISC_FRAGMENT_5, MAZITE_ORB);
+            entries.addAfter(Items.DISC_FRAGMENT_5, VOLTED_PILE);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {

@@ -42,7 +42,7 @@ public class DynamiteBlock extends FallingBlock {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return cuboidPxl(6, 0, 6, 10, 12, 10); // same as your original "pixel" values
+        return cuboidPxl(6, 0, 6, 10, 12, 10);
     }
 
     @Override

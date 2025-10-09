@@ -1,17 +1,27 @@
 {
-  "item.betalatethannever.chert": "Chert",
-  "item.betalatethannever.coconut_chunk": "Coconut Chunk",
-  "item.betalatethannever.soul_charge": "Soul Charge",
-  "item.betalatethannever.stripper": "Stripper",
-  "item.betalatethannever.tamper": "Tamper",
-  "item.betalatethannever.volted_pile": "Volted Pile",
   "entity.betalatethannever.unlit_dynamite": "Unlit Dynamite",
   "entity.betalatethannever.dynamite": "Lit Dynamite",
 
+  "item.betalatethannever.volted_pile": "Volted Pile",
+  "item.betalatethannever.chert": "Chert",
+  "item.betalatethannever.mazite": "Mazite",
+  "item.betalatethannever.mazite_orb": "Mazite Orb",
+
+
+  "item.betalatethannever.coconut_chunk": "Coconut Chunk",
+
+  "item.betalatethannever.soul_charge": "Soul Charge",
+  "item.betalatethannever.stripper": "Stripper",
+  "item.betalatethannever.tamper": "Tamper",
+
   "block.betalatethannever.polisher": "Polisher",
+  "block.betalatethannever.charged_soul_fire": "Charged Soul Fire",
 
   "block.betalatethannever.blackpowder_trail": "Blackpowder",
+  "block.betalatethannever.blackpowder_keg": "Blackpowder Keg",
   "block.betalatethannever.dynamite_block": "Dynamite",
+
+
   "block.betalatethannever.coarse_gravel": "Coarse Gravel",
   "block.betalatethannever.coconut": "Coconut",
   "block.betalatethannever.carved_coconut": "Carved Coconut",
@@ -26,7 +36,8 @@
   "block.betalatethannever.palm_leaves": "Palm Leaves",
   "block.betalatethannever.lazuli_cobblestone": "Lazuli Cobblestone",
   "block.betalatethannever.polished_lapis_block": "Polished Block of Lapis Lazuli",
-  "block.betalatethannever.charged_soul_fire": "Charged Soul Fire",
+  "block.betalatethannever.mazite_block": "Block of Mazite",
+  "block.betalatethannever.polished_mazite_block": "Polished Block of Mazite",
 
   "block.betalatethannever.grass_path": "Grass Path",
   "block.betalatethannever.podzol_path": "Podzol Path",

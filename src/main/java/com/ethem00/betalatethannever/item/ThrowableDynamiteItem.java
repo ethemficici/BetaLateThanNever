@@ -87,7 +87,7 @@ public class ThrowableDynamiteItem extends BlockItem {
 
     /**
      * Spawns a thrown DynamiteEntity and plays priming sound
-     */
+     **/
     private void throwDynamite(World world, PlayerEntity player, ItemStack dynamiteStack, ItemStack offhandStack, int throwType) {
         if (!world.isClient) {
 

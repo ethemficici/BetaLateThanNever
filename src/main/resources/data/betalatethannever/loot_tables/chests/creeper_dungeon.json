@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "name": "betalatethannever:volted_pile",
-          "weight": 15
+          "weight": 25
         },
         {
           "type": "minecraft:item",

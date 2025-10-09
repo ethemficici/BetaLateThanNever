@@ -1,13 +1,22 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "equipment",
-  "ingredients": [
-    {
-      "item": "minecraft:soul_soil",
-      "item": "betalatethannever:blackpowder",
+  "pattern": [
+    " C ",
+    "CBA",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "betalatethannever:blackpowder"
+    },
+    "B": {
+      "item": "betalatethannever:mazite_orb"
+    },
+    "C": {
       "item": "minecraft:lapis_lazuli"
     }
-  ],
+  },
   "result": {
     "item": "betalatethannever:soul_charge",
     "count": 1

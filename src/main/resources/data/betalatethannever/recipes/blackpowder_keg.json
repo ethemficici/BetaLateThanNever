@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "BBB",
+    "BAB",
+    "BBB"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:barrel"
+    },
+    "B": {
+      "item": "betalatethannever:blackpowder"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:blackpowder_keg",
+    "count": 1
+  }
+}

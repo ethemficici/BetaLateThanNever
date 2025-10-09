@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "betalatethannever:block/blackpowder_keg"
+    },
+    "lit=true": {
+      "model": "betalatethannever:block/blackpowder_keg_lit"
+    }
+  }
+}

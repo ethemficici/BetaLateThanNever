@@ -23,13 +23,20 @@ public class ModBlocks {
     // Misc
     public static final Block COARSE_GRAVEL = registerBlockMethod("coarse_gravel",
             new CoarseGravelBlock(AbstractBlock.Settings.create().mapColor(MapColor.STONE_GRAY).instrument(Instrument.SNARE).strength(0.75F).sounds(BlockSoundGroup.GRAVEL)));
+    public static final Block BLACKPOWDER_KEG = registerBlockMethod("blackpowder_keg",
+            new BlackpowderKegBlock(BlackpowderKegBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(Instrument.BASS).strength(3.5F).resistance(1).sounds(BlockSoundGroup.WOOD).burnable()));
     public static final Block BLACKPOWDER_TRAIL = registerBlockMethod("blackpowder_trail",
-            new Block(AbstractBlock.Settings.create().noCollision().breakInstantly().pistonBehavior(PistonBehavior.DESTROY)));
+            new BlackpowderTrailBlock(BlackpowderTrailBlock.Settings.create().noCollision().breakInstantly().pistonBehavior(PistonBehavior.DESTROY).resistance(50).notSolid().sounds(BlockSoundGroup.SAND)));
     public static final Block DYNAMITE_BLOCK = registerBlockMethod("dynamite_block",
             new DynamiteBlock(AbstractBlock.Settings.create().mapColor(MapColor.BRIGHT_RED).notSolid().noBlockBreakParticles().pistonBehavior(PistonBehavior.DESTROY).breakInstantly().sounds(BlockSoundGroup.GRASS).burnable().solidBlock(Blocks::never).nonOpaque()));
     public static final Block CHARGED_SOUL_FIRE = registerBlockMethod("charged_soul_fire",
             new CustomSoulFireBlock(AbstractBlock.Settings.copy(Blocks.SOUL_FIRE)));
 
+    //Ore Blocks
+    public static final Block MAZITE_BLOCK = registerBlockMethod("mazite_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block POLISHED_MAZITE_BLOCK = registerBlockMethod("polished_mazite_block",
+            new Block(AbstractBlock.Settings.copy(Blocks.LAPIS_BLOCK).mapColor(MapColor.LIGHT_BLUE)));
 
     //Block Entities
     public static final Block MENDER_CHEST = registerBlockMethod("mender_chest",
@@ -172,11 +179,14 @@ public class ModBlocks {
             entries.addAfter(Items.MOSSY_STONE_BRICK_WALL, MOSSY_DUNGEON_BRICKS);
             entries.addAfter(Items.MOSSY_STONE_BRICK_WALL, DUNGEON_BRICKS);
 
+            //TODO: create Lazuli Cobblestone stairs, slabs, walls, etc.
+            entries.addAfter(Items.MOSSY_COBBLESTONE_WALL, LAZULI_COBBLESTONE);
+
             entries.addAfter(Items.BRICK_WALL, BRICK_PATH);
 
-            //TODO: create Lazuli Cobblestone stairs, slabs, walls, etc.
+            entries.addAfter(Items.LAPIS_BLOCK, POLISHED_MAZITE_BLOCK);
+            entries.addAfter(Items.LAPIS_BLOCK, MAZITE_BLOCK);
             entries.addAfter(Items.LAPIS_BLOCK, POLISHED_LAPIS_BLOCK);
-            entries.addAfter(Items.LAPIS_BLOCK, LAZULI_COBBLESTONE);
 
             //TODO: create Palm Wood stairs, slabs, etc.
             entries.addAfter(Items.CHERRY_BUTTON, PALM_PLANKS);
@@ -244,6 +254,9 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
             entries.addAfter(Items.BLAST_FURNACE, POLISHER);
+
+            entries.addAfter(Items.END_CRYSTAL, BLACKPOWDER_KEG);
+            entries.addAfter(Items.END_CRYSTAL, BLACKPOWDER_TRAIL);
         });
 
         //Register Flammable Blocks
