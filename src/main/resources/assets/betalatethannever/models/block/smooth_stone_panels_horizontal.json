@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "betalatethannever:block/smooth_stone_panels_top",
+    "side": "betalatethannever:block/smooth_stone_panels_side_alt"
+  }
+}

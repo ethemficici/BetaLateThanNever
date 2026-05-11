@@ -70,5 +70,7 @@
   "block.betalatethannever.light_gray_bricks": "Light Gray Bricks",
   "block.betalatethannever.white_bricks": "White Bricks",
   "block.betalatethannever.dungeon_bricks": "Dungeon Bricks",
-  "block.betalatethannever.mossy_dungeon_bricks": "Mossy Dungeon Bricks"
+  "block.betalatethannever.mossy_dungeon_bricks": "Mossy Dungeon Bricks",
+  "block.betalatethannever.smooth_stone_panels": "Smooth Stone Panels",
+  "block.betalatethannever.snow_bricks": "Snow Bricks"
 }

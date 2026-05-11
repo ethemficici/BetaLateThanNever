@@ -93,6 +93,12 @@ public class ModBlocks {
     public static final Block MOSSY_DUNGEON_BRICKS = registerBlockMethod("mossy_dungeon_bricks",
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.STONE_GRAY)));
 
+    public static final Block SMOOTH_STONE_PANELS = registerBlockMethod("smooth_stone_panels",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)));
+
+    public static final Block SNOW_BRICKS = registerBlockMethod("snow_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.SNOW_BLOCK)));
+
     // Tamper Path Blocks
     public static final Block GRASS_PATH = registerBlockMethod("grass_path",
             new DirtPathBlock(AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).strength(0.65F).sounds(BlockSoundGroup.GRASS).blockVision(Blocks::always).suffocates(Blocks::always)));
@@ -188,6 +194,8 @@ public class ModBlocks {
             entries.addAfter(Items.LAPIS_BLOCK, MAZITE_BLOCK);
             entries.addAfter(Items.LAPIS_BLOCK, POLISHED_LAPIS_BLOCK);
 
+            entries.addAfter(Items.SMOOTH_STONE_SLAB, SMOOTH_STONE_PANELS);
+
             //TODO: create Palm Wood stairs, slabs, etc.
             entries.addAfter(Items.CHERRY_BUTTON, PALM_PLANKS);
             entries.addAfter(Items.CHERRY_BUTTON, STRIPPED_PALM_WOOD);
@@ -221,6 +229,7 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
 
             entries.addAfter(Items.SNOW_BLOCK, SNOW_PATH);
+            entries.addAfter(Items.SNOW_BLOCK, SNOW_BRICKS);
             entries.addAfter(Items.RED_SAND, RED_SAND_PATH);
             entries.addAfter(Items.SAND, SAND_PATH);
             entries.addAfter(Items.CLAY, CLAY_PATH);

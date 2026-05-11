@@ -43,7 +43,7 @@ public class BlackpowderTrailBlock extends Block {
     public static final BooleanProperty WILL_EXPLODE = BooleanProperty.of("will_explode");
     public static final BooleanProperty EMPOWERED = BooleanProperty.of("empowered");
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 1, 16.0);
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 0.5, 16.0);
 
     public BlackpowderTrailBlock(Settings settings) {
         super(settings);
@@ -79,13 +79,13 @@ public class BlackpowderTrailBlock extends Block {
 
         if(!world.getBlockState(pos.down()).isSolid())
         {
-            world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
             ItemScatterer.spawn(
                     ((ServerWorld) world),
                     pos.getX() + 0.5, // center of block
                     pos.getY() + 0.25,
                     pos.getZ() + 0.5,
                     new ItemStack(ModBlocks.BLACKPOWDER_TRAIL));
+            world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
