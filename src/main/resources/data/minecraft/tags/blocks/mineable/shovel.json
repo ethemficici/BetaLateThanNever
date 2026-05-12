@@ -15,6 +15,7 @@
     "betalatethannever:mud_path",
     "betalatethannever:clay_path",
     "betalatethannever:snow_path",
-    "betalatethannever:brick_path"
+    "betalatethannever:brick_path",
+    "betalatethannever:snow_bricks"
   ]
 }

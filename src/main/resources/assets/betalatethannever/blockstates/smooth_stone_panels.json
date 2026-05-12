@@ -1,16 +1,32 @@
 {
   "variants": {
-    "axis=x": {
-      "model": "betalatethannever:block/smooth_stone_panels_horizontal",
-      "x": 90,
-      "y": 90
+    "facing=down": {
+      "model": "betalatethannever:block/smooth_stone_panels",
+      "x": 180,
+      "y": 180
     },
-    "axis=y": {
-      "model": "betalatethannever:block/smooth_stone_panels"
+    "facing=east": {
+      "model": "betalatethannever:block/smooth_stone_panels",
+      "x": -90,
+      "y": -90
     },
-    "axis=z": {
-      "model": "betalatethannever:block/smooth_stone_panels_horizontal",
-      "x": 90
+    "facing=north": {
+      "model": "betalatethannever:block/smooth_stone_panels",
+      "x": -90,
+      "y": -180
+    },
+    "facing=south": {
+      "model": "betalatethannever:block/smooth_stone_panels",
+      "x": -90
+    },
+    "facing=up": {
+      "model": "betalatethannever:block/smooth_stone_panels",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "betalatethannever:block/smooth_stone_panels",
+      "x": -90,
+      "y": -270
     }
   }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "AA",
+    "AA"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:snow_block"
+    }
+  },
+  "result": {
+    "item": "betalatethannever:snow_bricks",
+    "count": 4
+  }
+}

@@ -94,10 +94,16 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.STONE_GRAY)));
 
     public static final Block SMOOTH_STONE_PANELS = registerBlockMethod("smooth_stone_panels",
-            new PillarBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)));
+            new DirectionalPillarBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)));
 
     public static final Block SNOW_BRICKS = registerBlockMethod("snow_bricks",
-            new Block(AbstractBlock.Settings.copy(Blocks.SNOW_BLOCK)));
+            new Block(AbstractBlock.Settings.copy(Blocks.SNOW_BLOCK).strength(0.4f)));
+
+    //Lamps
+    public static final Block ICE_LAMP = registerBlockMethod("ice_lamp",
+            new Block(AbstractBlock.Settings.copy(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE).luminance(state -> 11)));
+    public static final Block LAVA_LAMP = registerBlockMethod("lava_lamp",
+            new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).mapColor(MapColor.ORANGE).sounds(BlockSoundGroup.GLASS).luminance(state -> 15)));
 
     // Tamper Path Blocks
     public static final Block GRASS_PATH = registerBlockMethod("grass_path",
@@ -266,6 +272,9 @@ public class ModBlocks {
 
             entries.addAfter(Items.END_CRYSTAL, BLACKPOWDER_KEG);
             entries.addAfter(Items.END_CRYSTAL, BLACKPOWDER_TRAIL);
+
+            entries.addAfter(Items.SEA_LANTERN, LAVA_LAMP);
+            entries.addAfter(Items.SEA_LANTERN, ICE_LAMP);
         });
 
         //Register Flammable Blocks

@@ -72,5 +72,7 @@
   "block.betalatethannever.dungeon_bricks": "Dungeon Bricks",
   "block.betalatethannever.mossy_dungeon_bricks": "Mossy Dungeon Bricks",
   "block.betalatethannever.smooth_stone_panels": "Smooth Stone Panels",
-  "block.betalatethannever.snow_bricks": "Snow Bricks"
+  "block.betalatethannever.snow_bricks": "Snow Bricks",
+  "block.betalatethannever.ice_lamp": "Ice Lamp",
+  "block.betalatethannever.lava_lamp": "Lava Lamp"
 }
