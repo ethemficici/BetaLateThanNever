@@ -1,7 +1,31 @@
 {
   "variants": {
-    "": {
-      "model": "betalatethannever:block/lava_lamp"
+    "facing=down": {
+      "model": "betalatethannever:block/lava_lamp",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "betalatethannever:block/lava_lamp",
+      "x": 90,
+      "y": 270
+    },
+    "facing=north": {
+      "model": "betalatethannever:block/lava_lamp",
+      "x": 270
+    },
+    "facing=south": {
+      "model": "betalatethannever:block/lava_lamp",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "betalatethannever:block/lava_lamp",
+      "x": 180,
+      "y": 180
+    },
+    "facing=west": {
+      "model": "betalatethannever:block/lava_lamp",
+      "x": 90,
+      "y": 90
     }
   }
 }

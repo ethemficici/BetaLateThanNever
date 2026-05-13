@@ -103,7 +103,7 @@ public class ModBlocks {
     public static final Block ICE_LAMP = registerBlockMethod("ice_lamp",
             new Block(AbstractBlock.Settings.copy(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE).luminance(state -> 11)));
     public static final Block LAVA_LAMP = registerBlockMethod("lava_lamp",
-            new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).mapColor(MapColor.ORANGE).sounds(BlockSoundGroup.GLASS).luminance(state -> 15)));
+            new DirectionalPillarBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).mapColor(MapColor.ORANGE).sounds(BlockSoundGroup.GLASS).luminance(state -> 15)));
 
     // Tamper Path Blocks
     public static final Block GRASS_PATH = registerBlockMethod("grass_path",
