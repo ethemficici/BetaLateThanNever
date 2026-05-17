@@ -88,6 +88,9 @@ public class ModBlocks {
     public static final Block WHITE_BRICKS = registerBlockMethod("white_bricks",
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.WHITE)));
 
+    public static final Block COBBLESTONE_BRICKS = registerBlockMethod("cobblestone_bricks",
+            new Block(AbstractBlock.Settings.copy(Blocks.COBBLESTONE).strength(2.5F)));
+
     public static final Block DUNGEON_BRICKS = registerBlockMethod("dungeon_bricks",
             new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).mapColor(MapColor.STONE_GRAY)));
     public static final Block MOSSY_DUNGEON_BRICKS = registerBlockMethod("mossy_dungeon_bricks",
@@ -187,6 +190,8 @@ public class ModBlocks {
         BetaLateThanNever.LOGGER.info("Registering modded blocks from " + BetaLateThanNever.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+
+            entries.addAfter(Items.COBBLESTONE_WALL, COBBLESTONE_BRICKS);
 
             entries.addAfter(Items.MOSSY_STONE_BRICK_WALL, MOSSY_DUNGEON_BRICKS);
             entries.addAfter(Items.MOSSY_STONE_BRICK_WALL, DUNGEON_BRICKS);
